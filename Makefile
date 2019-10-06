@@ -6,6 +6,9 @@ RV_PREFIX          ?= ${RISCV}
 
 TEST_DIR            = utils/tests
 
+.PHONY: all
+all: rv-tests spike
+
 .PHONY: submodules
 submodules:
 	@if git submodule status | egrep -q '^[-]|^[+]' ; then \
