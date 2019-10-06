@@ -1,9 +1,11 @@
 [submodule "utils/spike"]
 	path = utils/spike
 	url = https://github.com/riscv/riscv-isa-sim
+	branch = riscv-bitmanip
 [submodule "utils/riscv-opcodes"]
 	path = utils/riscv-opcodes
 	url = https://github.com/riscv/riscv-opcodes
+	branch = riscv-bitmanip
 [submodule "utils/tests"]
 	path = utils/tests
 	url = https://github.com/riscv/riscv-tests
