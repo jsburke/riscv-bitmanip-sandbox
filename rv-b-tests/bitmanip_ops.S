@@ -3,4 +3,18 @@
 .word (((_funct7) << 25) | ((_rs2) << 20) | ((_rs1) << 15) | ((_funct3) << 12) | ((_rd) << 7) | ((_opcode) << 0))
 
 #define new_i_type_insn(_imm11_0, _rs1, _funct3, _rd, _opcode) \
-.word
+.word ((_imm11_0 << 20)| (_rs1 << 15)| (_funct3 << 12)| (_rd << 7) | (_opcode << 0))
+
+#define new_s_type_insn(_funct7, _rs2, _rs1, _funct3, _rd, _opcode) \
+.word (((_funct7) << 25) | ((_rs2) << 20) | ((_rs1) << 15) | ((_funct3) << 12) | ((_rd) << 7) | ((_opcode) << 0))
+
+#define new_b_type_insn(_funct7, _rs2, _rs1, _funct3, _rd, _opcode) \
+.word (((_funct7) << 25) | ((_rs2) << 20) | ((_rs1) << 15) | ((_funct3) << 12) | ((_rd) << 7) | ((_opcode) << 0))
+
+#define new_u_type_insn(_funct7, _rs2, _rs1, _funct3, _rd, _opcode) \
+.word (((_funct7) << 25) | ((_rs2) << 20) | ((_rs1) << 15) | ((_funct3) << 12) | ((_rd) << 7) | ((_opcode) << 0))
+
+#define new_j_type_insn(_funct7, _rs2, _rs1, _funct3, _rd, _opcode) \
+.word (((_funct7) << 25) | ((_rs2) << 20) | ((_rs1) << 15) | ((_funct3) << 12) | ((_rd) << 7) | ((_opcode) << 0))
+
+
