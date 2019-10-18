@@ -2,6 +2,41 @@
 
 opcodes_file = "../utils/riscv-opcodes/opcodes"
 
+  # use a list to make life easy
+  # is an insn R-Type, I-Type, etc
+  # this will need manual updates
+
+insn_types = [("andn",   "R"),
+              ("orn",    "R"),
+              ("xnorn",  "R"),
+
+              ("slo",    "R"),
+              ("sro",    "R"),
+              ("rol",    "R"),
+              ("ror",    "R"),
+
+              ("sbclr",  "R"),
+              ("sbset",  "R"),
+              ("sbinv",  "R"),
+              ("sbext",  "R"),
+
+              ("gorc",   "R"),
+              ("grev",   "R"),
+
+              ("sloi",   "I"),
+              ("sroi",   "I"),
+              ("rori",   "I"),
+
+              ("sbclri", "I"),
+              ("sbseti", "I"),
+              ("sbinvi", "I"),
+              ("sbexti", "I"),
+
+              ("gorci",  "I"),
+              ("grevi",  "I"),
+
+]
+
 def line_parse(line):
   line_clean = "" if "#" in line else line.strip()
   if line_clean is not "":
