@@ -35,6 +35,17 @@ insn_types = [("andn",   "R"),
               ("gorci",  "I"),
               ("grevi",  "I"),
 
+              ("cmix",   "R4"),
+              ("cmov",   "R4"),
+
+              ("fsl",    "R4"),
+              ("fsr",    "R4"),
+              ("fsri",   "I4"),
+
+              ("clz",    "R1"),
+              ("ctz",    "R1"),
+              ("pcnt",   "R1"),
+
 ]
 
 def line_parse(line):
