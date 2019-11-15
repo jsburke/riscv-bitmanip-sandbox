@@ -1,24 +1,26 @@
-
 /////////////////////////////////////////////////
 //                                             //
 //  Templates to generate new insns            //
 //                                             //
-//    All comments reference rv user spec      //
+//    Comments reference rv user spec          //
 //    Chapter 24, the listing                  //
+//    some refer to bitmanip work              //
 //                                             //
 /////////////////////////////////////////////////
 
+.equ RV_CUSTOM_OPCODE_0, 0x17 // 0b00010111
+.equ RV_CUSTOM_OPCODE_1, 0x57 // 0b01010111
 
 #define new_r_type_insn(_funct7, _rs2, _rs1, _funct3, _rd, _opcode) \
 .word (((_funct7) << 25) | ((_rs2) << 20) | ((_rs1) << 15) | ((_funct3) << 12) | ((_rd) << 7) | ((_opcode) << 0))
 
-  // R2-type is meant for instructions like clz or pcnt
+  // R2-type is meant for bitmanip insns like clz or pcnt
   // one source reg, one dest, and a constant where r2 is in R-Type
 
 #define new_r2_type_insn(_funct7, _r2_const, _rs1, _funct3, _rd, _opcode) \
 .word (((_funct7) << 25) | ((_r2_const) << 20) | ((_rs1) << 15) | ((_funct3) << 12) | ((_rd) << 7) | ((_opcode) << 0))
 
-  // R4-type is meant for the instructions like cmov
+  // R4-type is meant for some floating and bitmanip insns
   // 3 source registers, one destination
 
 #define new_r4_type_insn(_rs3, _funct2, _rs2, _rs1, _funct3, _rd, _opcode) \
@@ -40,6 +42,3 @@
 
 #define new_uj_type_insn(_imm, _rd, _opcode) \
 .word (((_imm) << 12) | ((_rd) << 7) | ((_opcode) << 0))
-
-
-
